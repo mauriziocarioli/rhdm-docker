@@ -314,7 +314,7 @@ if [ "$SECMGR" = "true" ]; then
     MODULE_OPTS="$MODULE_OPTS -secmgr";
 fi
 
-JAVA_OPTS="$JAVA_OPTS -Xms4G -Xmx4G -XX:MaxMetaspaceSize=1G"
+JAVA_OPTS="$JAVA_OPTS -Xms500m -Xmx2G -XX:MaxMetaspaceSize=500m"
 
 # Display our environment
 echo "========================================================================="

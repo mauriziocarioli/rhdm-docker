@@ -1,0 +1,37 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <profiles>
+    <profile>
+      <id>cloudrepo</id>
+      <repositories>
+        <repository>
+          <id>io.cloudrepo</id>
+          <name>Cloud Repo</name>
+          <url>https://maucar.mycloudrepo.io/repositories/pocrepo</ur>
+            <releases>
+              <enabled>false</enabled>
+              <!--updatePolicy>never</updatePolicy-->
+            </releases>
+            <snapshots>
+              <enabled>true</enabled>
+            </snapshots>
+       </repository>
+      </repositories>
+    </profile>
+  </profiles/>
+  <activeProfiles>
+    <activeProfile>cloudrepo</activeProfile>
+  </activeProfiles>
+  <servers>
+    <server>
+      <id>io.cloudrepo</id>
+      <username>mcarioli@redhat.com</username>
+      <password>redhatdm1!</password>
+      <!--privateKey>${user.home}/.ssh/id_dsa</privateKey-->
+      <!--passphrase>some_passphrase</passphrase-->
+      <!--filePermissions>664</filePermissions-->
+      <!--directoryPermissions>775</directoryPermissions-->
+      <configuration></configuration>
+    </server>
+  </servers>
+ </settings>

@@ -1,0 +1,7 @@
+    <distributionManagement>
+        <repository>
+            <id>io.cloudrepo</id>
+            <url>https://maucar.mycloudrepo.io/repositories/pocrepo</url>
+            <layout>default</layout>
+        </repository>
+    </distributionManagement>
