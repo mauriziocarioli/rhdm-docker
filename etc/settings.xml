@@ -1,6 +1,6 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-  <profiles>
+  <!--profiles>
     <profile>
       <id>cloudrepo</id>
       <repositories>
@@ -10,7 +10,7 @@
           <url>https://maucar.mycloudrepo.io/repositories/pocrepo</ur>
             <releases>
               <enabled>false</enabled>
-              <!--updatePolicy>never</updatePolicy-->
+              <updatePolicy>never</updatePolicy>
             </releases>
             <snapshots>
               <enabled>true</enabled>
@@ -18,10 +18,10 @@
        </repository>
       </repositories>
     </profile>
-  </profiles/>
-  <activeProfiles>
+  </profiles/-->
+  <!--activeProfiles>
     <activeProfile>cloudrepo</activeProfile>
-  </activeProfiles>
+  </activeProfiles-->
   <servers>
     <server>
       <id>io.cloudrepo</id>
