@@ -1,13 +1,13 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-  <!--profiles>
+  <profiles>
     <profile>
       <id>cloudrepo</id>
       <repositories>
         <repository>
           <id>io.cloudrepo</id>
           <name>Cloud Repo</name>
-          <url>https://maucar.mycloudrepo.io/repositories/pocrepo</ur>
+          <url>https://maucar.mycloudrepo.io/repositories/pocrepo</url>
             <releases>
               <enabled>false</enabled>
               <updatePolicy>never</updatePolicy>
@@ -18,10 +18,44 @@
        </repository>
       </repositories>
     </profile>
-  </profiles/-->
-  <!--activeProfiles>
+        <profile>
+            <id>redhat-ga-repository</id>
+            <repositories>
+                <repository>
+                    <id>redhat-ga-repository</id>
+                    <name>Red Hat GA repository</name>
+                    <url>https://maven.repository.redhat.com/ga/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>daily</updatePolicy>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>redhat-ga-repository</id>
+                    <name>Red Hat GA repository</name>
+                    <url>https://maven.repository.redhat.com/ga/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>daily</updatePolicy>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+  </profiles>
+  <activeProfiles>
     <activeProfile>cloudrepo</activeProfile>
-  </activeProfiles-->
+    <activeProfile>redhat-ga-repository</activeProfile>
+  </activeProfiles>
   <servers>
     <server>
       <id>io.cloudrepo</id>

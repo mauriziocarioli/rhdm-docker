@@ -5,14 +5,16 @@ ENV KIE_DATA $KIE_HOME/data
 ENV JBOSS_HOME $HOME/eap
 ENV JBOSS_CONFIG /opt/eap/standalone/configuration
 ENV JBOSS_BIN $JBOSS_HOME/bin
-ENV MAVEN_REPO $KIE_DATA/.m2
-ENV GIT_REPO $KIE_DATA/git
+ENV M2 $KIE_DATA/.m2
+ENV MAVEN_REPO $M2/repository
 ENV GITHOOKS $KIE_DATA/githooks
 RUN mkdir $KIE_DATA
-RUN mkdir $MAVEN_REPO
-RUN mkdir $GIT_REPO
 RUN mkdir $GITHOOKS
-COPY etc/settings.xml $MAVEN_REPO
+RUN mkdir $M2
+RUN mkdir $MAVEN_REPO
+#Setting JAVA_OPTS causes error at start up.
+#ENV JAVA_OPTS -Xms2G -Xmx2G -XX:MaxMetaspaceSize=500m -Djava.net.preferIPv4Stack=true -Dfile.encoding=UTF-8
+COPY etc/settings.xml $M2
 COPY etc/application-roles.properties $JBOSS_CONFIG/application-roles.properties
 COPY etc/application-users.properties $JBOSS_CONFIG/application-users.properties
 COPY etc/mgmt-groups.properties $$JBOSS_CONFIG/mgmt-groups.properties
@@ -20,10 +22,20 @@ COPY etc/mgmt-users.properties $JBOSS_CONFIG/mgmt-users.properties
 COPY etc/standalone-full.xml $JBOSS_CONFIG/standalone.xml
 COPY etc/standalone.sh $JBOSS_BIN/standalone.sh
 USER root
-RUN chown -R jboss:root $JBOSS_CONFIG/standalone.xml $JBOSS_BIN/standalone.sh $KIE_DATA $MAVEN_REPO $GIT_REPO $GITHOOKS
+RUN chown -R jboss:root $KIE_DATA 
+RUN chown jboss:root $JBOSS_BIN/standalone.sh
+RUN chown jboss:root $JBOSS_CONFIG/standalone.xml
+RUN chown jboss:root $JBOSS_CONFIG/application-roles.properties
+RUN chown jboss:root $JBOSS_CONFIG/application-users.properties
 USER jboss
+#do not expose jboss management ports
 #EXPOSE 9990 9999 8080 8001
 EXPOSE 8080 8001
 ENTRYPOINT ["/opt/eap/bin/standalone.sh"]
+#do not allow jboss management
 #CMD ["-c","standalone.xml","-b","0.0.0.0","-bmanagement","0.0.0.0"]
+#using -D to set system variables gives invalid option error
+#CMD ["-c","standalone.xml","-b","0.0.0.0","-D","org.uberfire.nio.git.dir=/opt/kie/data","-D","org.guvnor.m2repo.dir=/opt/kie/data/.m2/repository","-D","kie.maven.settings.custom=/opt/kie/data/.m2/settings.xml"]
 CMD ["-c","standalone.xml","-b","0.0.0.0"]
+#login at localhost:8080/login
+#rest server at localhost:8080/rest

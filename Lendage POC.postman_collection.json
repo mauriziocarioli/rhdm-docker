@@ -1,0 +1,549 @@
+{
+	"info": {
+		"_postman_id": "62c79152-ae7e-4506-a953-42d89eea8315",
+		"name": "Lendage POC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Server",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "kieserver1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "kieserver",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://rh-kie.dev.lndgcp.com/services/rest/server/",
+					"protocol": "https",
+					"host": [
+						"rh-kie",
+						"dev",
+						"lndgcp",
+						"com"
+					],
+					"path": [
+						"services",
+						"rest",
+						"server",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Server",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://rh-kie.dev.lndgcp.com/services/rest/server/",
+							"protocol": "https",
+							"host": [
+								"rh-kie",
+								"dev",
+								"lndgcp",
+								"com"
+							],
+							"path": [
+								"services",
+								"rest",
+								"server",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.15.5"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 10 Nov 2020 14:53:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/xml;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Undertow/1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "visid_incap_2157427=tWTrC03DTXe/HsnY2pOGW4Cpql8AAAAAQUIPAAAAAADm2JAVtEhdSdm7F164DILz; expires=Wed, 10 Nov 2021 13:32:25 GMT; HttpOnly; path=/; Domain=.dev.lndgcp.com"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "nlbi_2157427=NYIJAd2wMlrjd19Yfd8+EgAAAABP5CwN+8G2+9E9VbNV0N7E; path=/; Domain=.dev.lndgcp.com"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "incap_ses_139_2157427=GBRMTqwWWVcuaSRSLNTtAYCpql8AAAAA9k6sh8oxBFx4zkmcWesmXQ==; path=/; Domain=.dev.lndgcp.com"
+						},
+						{
+							"key": "X-CDN",
+							"value": "Incapsula"
+						},
+						{
+							"key": "X-Iinfo",
+							"value": "8-60823193-60823203 NNNN CT(29 61 0) RT(1605020032082 37) q(0 0 1 1) r(1 1) U5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"type\" : \"SUCCESS\",\n  \"msg\" : \"Kie Server info\",\n  \"result\" : {\n    \"kie-server-info\" : {\n      \"id\" : \"lendage-kie-server\",\n      \"version\" : \"7.39.0.Final-redhat-00007\",\n      \"name\" : \"lendage-kie-server\",\n      \"location\" : \"https://rh-kie.dev.lndgcp.com/services/rest/server\",\n      \"capabilities\" : [ \"KieServer\", \"BRM\", \"BRP\", \"DMN\", \"Swagger\" ],\n      \"messages\" : [ {\n        \"severity\" : \"INFO\",\n        \"timestamp\" : {\n  \"java.util.Date\" : 1604963681910\n},\n        \"content\" : [ \"Server KieServerInfo{serverId='lendage-kie-server', version='7.39.0.Final-redhat-00007', name='lendage-kie-server', location='https://rh-kie.dev.lndgcp.com/services/rest/server', capabilities=[KieServer, BRM, BRP, DMN, Swagger]', messages=null', mode=DEVELOPMENT}started successfully at Mon Nov 09 23:14:41 UTC 2020\" ]\n      } ],\n      \"mode\" : \"DEVELOPMENT\"\n    }\n  }\n}"
+				},
+				{
+					"name": "Get Server",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://rh-kie.dev.lndgcp.com/services/rest/server/",
+							"protocol": "https",
+							"host": [
+								"rh-kie",
+								"dev",
+								"lndgcp",
+								"com"
+							],
+							"path": [
+								"services",
+								"rest",
+								"server",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.15.5"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 10 Nov 2020 14:53:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/xml;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Undertow/1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "visid_incap_2157427=tWTrC03DTXe/HsnY2pOGW4Cpql8AAAAAQUIPAAAAAADm2JAVtEhdSdm7F164DILz; expires=Wed, 10 Nov 2021 13:32:25 GMT; HttpOnly; path=/; Domain=.dev.lndgcp.com"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "nlbi_2157427=NYIJAd2wMlrjd19Yfd8+EgAAAABP5CwN+8G2+9E9VbNV0N7E; path=/; Domain=.dev.lndgcp.com"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "incap_ses_139_2157427=GBRMTqwWWVcuaSRSLNTtAYCpql8AAAAA9k6sh8oxBFx4zkmcWesmXQ==; path=/; Domain=.dev.lndgcp.com"
+						},
+						{
+							"key": "X-CDN",
+							"value": "Incapsula"
+						},
+						{
+							"key": "X-Iinfo",
+							"value": "8-60823193-60823203 NNNN CT(29 61 0) RT(1605020032082 37) q(0 0 1 1) r(1 1) U5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"type\" : \"SUCCESS\",\n  \"msg\" : \"Kie Server info\",\n  \"result\" : {\n    \"kie-server-info\" : {\n      \"id\" : \"lendage-kie-server\",\n      \"version\" : \"7.39.0.Final-redhat-00007\",\n      \"name\" : \"lendage-kie-server\",\n      \"location\" : \"https://rh-kie.dev.lndgcp.com/services/rest/server\",\n      \"capabilities\" : [ \"KieServer\", \"BRM\", \"BRP\", \"DMN\", \"Swagger\" ],\n      \"messages\" : [ {\n        \"severity\" : \"INFO\",\n        \"timestamp\" : {\n  \"java.util.Date\" : 1604963681910\n},\n        \"content\" : [ \"Server KieServerInfo{serverId='lendage-kie-server', version='7.39.0.Final-redhat-00007', name='lendage-kie-server', location='https://rh-kie.dev.lndgcp.com/services/rest/server', capabilities=[KieServer, BRM, BRP, DMN, Swagger]', messages=null', mode=DEVELOPMENT}started successfully at Mon Nov 09 23:14:41 UTC 2020\" ]\n      } ],\n      \"mode\" : \"DEVELOPMENT\"\n    }\n  }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Containers",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "kieserver1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "kieserver",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://rh-kie.dev.lndgcp.com/services/rest/server/containers",
+					"protocol": "https",
+					"host": [
+						"rh-kie",
+						"dev",
+						"lndgcp",
+						"com"
+					],
+					"path": [
+						"services",
+						"rest",
+						"server",
+						"containers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Containers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://rh-kie.dev.lndgcp.com/services/rest/server/containers",
+							"protocol": "https",
+							"host": [
+								"rh-kie",
+								"dev",
+								"lndgcp",
+								"com"
+							],
+							"path": [
+								"services",
+								"rest",
+								"server",
+								"containers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.15.5"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 10 Nov 2020 15:20:55 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/xml;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Undertow/1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "incap_ses_139_2157427=DGBjAGDtbXwhey1SLNTtAdavql8AAAAAmYS2hWQHeoEcHfWOmseTiQ==; path=/; Domain=.dev.lndgcp.com"
+						},
+						{
+							"key": "X-CDN",
+							"value": "Incapsula"
+						},
+						{
+							"key": "X-Iinfo",
+							"value": "8-61019241-61019247 NNNN CT(29 65 0) RT(1605021654625 29) q(0 0 1 2) r(1 1) U5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"type\" : \"SUCCESS\",\n  \"msg\" : \"List of created containers\",\n  \"result\" : {\n    \"kie-containers\" : {\n      \"kie-container\" : [ {\n        \"container-id\" : \"BasicLoanQualification_1.0.0-SNAPSHOT\",\n        \"release-id\" : {\n          \"group-id\" : \"com.lendagepocprojects\",\n          \"artifact-id\" : \"BasicLoanQualification\",\n          \"version\" : \"1.0.0-SNAPSHOT\"\n        },\n        \"resolved-release-id\" : {\n          \"group-id\" : \"com.lendagepocprojects\",\n          \"artifact-id\" : \"BasicLoanQualification\",\n          \"version\" : \"1.0.0-SNAPSHOT\"\n        },\n        \"status\" : \"STARTED\",\n        \"scanner\" : {\n          \"status\" : \"DISPOSED\",\n          \"poll-interval\" : null\n        },\n        \"config-items\" : [ ],\n        \"messages\" : [ {\n          \"severity\" : \"INFO\",\n          \"timestamp\" : {\n  \"java.util.Date\" : 1604981735223\n},\n          \"content\" : [ \"Release id successfully updated for container BasicLoanQualification_1.0.0-SNAPSHOT\" ]\n        } ],\n        \"container-alias\" : \"BasicLoanQualification\"\n      } ]\n    }\n  }\n}"
+				}
+			]
+		},
+		{
+			"name": "Run Rules",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "kieserver1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "kieserver",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"lookup\":\"LendageStateless\",\n    \"commands\": [\n        {\n            \"insert\": {\n                \"object\": {\n                    \"com.lendagepocprojects.basicloanqualification.LeadInformation\": {\n                        \"FICO\":650,\n                        \"state\":\"CO\",\n                        \"eligibleDebt\": 45000,\n                        \"totalMortgageLiability\":200000,\n                        \"propertyValue\": 500000,\n                        \"propertyType\": \"QUADRAPLEX\",\n                        \"countHomesFinanced\": 1\n                    }\n                },\n                \"out-identifier\": \"loan\",\n                \"return-object\": true\n            }\n        },\n        {\n            \"fire-all-rules\": {\n                \"out-identifier\": \"firedActivations\"\n            }\n        },\n        {\n            \"dispose\": {}\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://rh-kie.dev.lndgcp.com/services/rest/server/containers/instances/BasicLoanQualification",
+					"protocol": "https",
+					"host": [
+						"rh-kie",
+						"dev",
+						"lndgcp",
+						"com"
+					],
+					"path": [
+						"services",
+						"rest",
+						"server",
+						"containers",
+						"instances",
+						"BasicLoanQualification"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Run Rules",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"lookup\":\"LendageStateless\",\n    \"commands\": [\n        {\n            \"insert\": {\n                \"object\": {\n                    \"com.lendagepocprojects.basicloanqualification.LeadInformation\": {\n                        \"FICO\":650,\n                        \"state\":\"CO\",\n                        \"eligibleDebt\": 45000,\n                        \"totalMortgageLiability\":200000,\n                        \"propertyValue\": 500000,\n                        \"propertyType\": \"QUADRAPLEX\",\n                        \"countHomesFinanced\": 1\n                    }\n                },\n                \"out-identifier\": \"loan\",\n                \"return-object\": true\n            }\n        },\n        {\n            \"fire-all-rules\": {\n                \"out-identifier\": \"firedActivations\"\n            }\n        },\n        {\n            \"dispose\": {}\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://rh-kie.dev.lndgcp.com/services/rest/server/containers/instances/BasicLoanQualification",
+							"protocol": "https",
+							"host": [
+								"rh-kie",
+								"dev",
+								"lndgcp",
+								"com"
+							],
+							"path": [
+								"services",
+								"rest",
+								"server",
+								"containers",
+								"instances",
+								"BasicLoanQualification"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.15.5"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 10 Nov 2020 14:57:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/xml;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, must-revalidate"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Undertow/1"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "X-CDN",
+							"value": "Incapsula"
+						},
+						{
+							"key": "X-Iinfo",
+							"value": "8-60823193-60847309 NNNN CT(28 57 0) RT(1605020032082 198309) q(0 0 1 -1) r(2 2) U5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"type\" : \"SUCCESS\",\n  \"msg\" : \"Container BasicLoanQualification successfully called.\",\n  \"result\" : {\n    \"execution-results\" : {\n      \"results\" : [ {\n        \"value\" : {\"com.lendagepocprojects.basicloanqualification.LeadInformation\":{\n  \"state\" : \"CO\",\n  \"eligibleDebt\" : 45000,\n  \"countHomesFinanced\" : 1,\n  \"totalMortgageLiability\" : 200000,\n  \"propertyType\" : \"QUADRAPLEX\",\n  \"qualified\" : false,\n  \"propertyValue\" : 500000,\n  \"cltv\" : 49.1,\n  \"fico\" : 0\n}},\n        \"key\" : \"loan\"\n      }, {\n        \"value\" : 1,\n        \"key\" : \"firedActivations\"\n      } ],\n      \"facts\" : [ {\n        \"value\" : {\"org.drools.core.common.DefaultFactHandle\":{\n  \"external-form\" : \"0:1:131137858:131137858:2:DEFAULT:NON_TRAIT:com.lendagepocprojects.basicloanqualification.LeadInformation\"\n}},\n        \"key\" : \"loan\"\n      } ]\n    }\n  }\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
