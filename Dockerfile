@@ -1,20 +1,25 @@
 FROM registry.redhat.io/rhdm-7/rhdm-decisioncentral-rhel8
-ENV HOME /opt
-ENV KIE_HOME $HOME/kie
+ENV KIE_HOME /opt/kie
 ENV KIE_DATA $KIE_HOME/data
-ENV JBOSS_HOME $HOME/eap
+ENV JBOSS_HOME /opt/eap
 ENV JBOSS_CONFIG /opt/eap/standalone/configuration
 ENV JBOSS_BIN $JBOSS_HOME/bin
 ENV M2 $KIE_DATA/.m2
 ENV MAVEN_REPO $M2/repository
 ENV GITHOOKS $KIE_DATA/githooks
+ENV GITHOOKS_CONFIG_DIR $HOME/.bcgithook
+ENV GITHOOKS_CONFIG default.conf
 RUN mkdir $KIE_DATA
 RUN mkdir $GITHOOKS
+RUN mkdir $GITHOOKS_CONFIG_DIR
 RUN mkdir $M2
 RUN mkdir $MAVEN_REPO
 #Setting JAVA_OPTS causes error at start up.
 #ENV JAVA_OPTS -Xms2G -Xmx2G -XX:MaxMetaspaceSize=500m -Djava.net.preferIPv4Stack=true -Dfile.encoding=UTF-8
-COPY etc/settings.xml $M2
+COPY etc/settings.xml $M2/settings.xml
+#The post-commit file is not copied. Using persistent volume instead.
+#COPY etc/post-commit $GITHOOKS/post-commit
+COPY etc/$GITHOOKS_CONFIG $GITHOOKS_CONFIG_DIR
 COPY etc/application-roles.properties $JBOSS_CONFIG/application-roles.properties
 COPY etc/application-users.properties $JBOSS_CONFIG/application-users.properties
 COPY etc/mgmt-groups.properties $$JBOSS_CONFIG/mgmt-groups.properties
@@ -27,6 +32,9 @@ RUN chown jboss:root $JBOSS_BIN/standalone.sh
 RUN chown jboss:root $JBOSS_CONFIG/standalone.xml
 RUN chown jboss:root $JBOSS_CONFIG/application-roles.properties
 RUN chown jboss:root $JBOSS_CONFIG/application-users.properties
+RUN chown jboss:root $GITHOOKS_CONFIG_DIR/$GITHOOKS_CONFIG
+#RUN chown jboss:root $GITHOOKS/post-commit
+#RUN chmod 755 $GITHOOKS/post-commit
 USER jboss
 #do not expose jboss management ports
 #EXPOSE 9990 9999 8080 8001

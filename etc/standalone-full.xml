@@ -41,14 +41,18 @@
         <property name="org.jbpm.designer.perspective" value="ruleflow"/>
         <property name="designerdataobjects" value="false"/>
         <property name="org.kie.workbench.profile" value="FORCE_PLANNER_AND_RULES"/>
+        <!-- WORKBENCH GIT PROPERTIES BEGIN -->
         <!--property name="org.uberfire.nio.git.dir" value="${jboss.home.dir}/bin"/-->
         <property name="org.uberfire.nio.git.dir" value="/opt/kie/data"/>
-        <!--property name="org.uberfire.nio.git.hooks" value="/opt/kie/data/githooks"/-->
+        <property name="org.uberfire.nio.git.hooks" value="/opt/kie/data/githooks"/>
+        <!-- WORKBENCH GIT PROPERTIES END -->
         <property name="org.kie.server.repo" value="${jboss.server.data.dir}"/>
         <property name="org.uberfire.metadata.index.dir" value="${jboss.home.dir}/bin"/>
+        <!-- WORKBENCH MAVEN PROPERTIES BEGIN -->
         <!--property name="org.guvnor.m2repo.dir" value="${jboss.home.dir}/bin"/-->
         <property name="org.guvnor.m2repo.dir" value="/opt/kie/data/.m2/repository"/>
         <property name="kie.maven.settings.custom" value="/opt/kie/data/.m2/settings.xml"/>
+        <!-- WORKBENCH MAVEN PROPERTIES END -->
         <property name="org.kie.override.deploy.enabled" value="true"/>
         <property name="org.kie.server.controller" value="http://localhost:8080/rest/controller"/>
         <property name="org.kie.server.id" value="default-kie-server"/>
