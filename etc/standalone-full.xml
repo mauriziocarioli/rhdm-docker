@@ -55,10 +55,10 @@
         <!-- WORKBENCH MAVEN PROPERTIES END -->
         <property name="org.kie.override.deploy.enabled" value="true"/>
         <property name="org.kie.server.controller" value="http://localhost:8080/rest/controller"/>
-        <property name="org.kie.server.id" value="default-kie-server"/>
         <property name="org.kie.server.controller.user" value="kieserver"/>
         <property name="org.kie.server.controller.password" value="kieserver1!"/>
-        <property name="org.kie.server.location" value="http://localhost:8081/services/rest/server"/>
+        <!--property name="org.kie.server.id" value="default-kie-server"/>
+        <property name="org.kie.server.location" value="http://localhost:8081/services/rest/server"/-->
 	</system-properties>    
     <management>
         <security-realms>
