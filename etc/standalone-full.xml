@@ -47,7 +47,8 @@
         <property name="org.uberfire.nio.git.hooks" value="/opt/kie/data/githooks"/>
         <!-- WORKBENCH GIT PROPERTIES END -->
         <property name="org.kie.server.repo" value="${jboss.server.data.dir}"/>
-        <property name="org.uberfire.metadata.index.dir" value="${jboss.home.dir}/bin"/>
+        <!--property name="org.uberfire.metadata.index.dir" value="${jboss.home.dir}/bin"/-->
+        <property name="org.uberfire.metadata.index.dir" value="/opt/kie/data"/>
         <!-- WORKBENCH MAVEN PROPERTIES BEGIN -->
         <!--property name="org.guvnor.m2repo.dir" value="${jboss.home.dir}/bin"/-->
         <property name="org.guvnor.m2repo.dir" value="/opt/kie/data/.m2/repository"/>
